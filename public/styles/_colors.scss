@@ -1,7 +1,6 @@
-//Charcole
-$clrBlack: #484646;
+$clrText: #333333;
 
-$clrText: #212222;
+$clrBlack: #484646; //Charcole
 
 $clrGrey100: #767474; //rgba($clrBlack, .75)
 $clrGrey200: #a3a2a2; //rgba($clrBlack, .50)
@@ -10,24 +9,11 @@ $clrGrey400: #f6f6f6; //rgba($clrBlack,. 05)
 
 /*#endregion*/
 
-//Wine
-$clrRed100: #891848;
-$clrRed200: #a75276; //rgba($clrRed100, .75)
-$clrRed300: #c48ba3; //rgba($clrRed100, .50)
-$clrRed400: #e1c5d1; //rgba($clrRed100, .25)
+/*#region Blue*/
 
-/*#region Purpule*/
-
-$clrPurple900: #be7ceb;
-$clrPurple800: #aa6fd1;
-$clrPurple700: #9561b8;
-
-$clrPurple600: #80549e;
-
-$clrPurple500: #6c4685;
-$clrPurple400: #57396b;
-$clrPurple300: #422b52;
-$clrPurple200: #2e1e38;
-$clrPurple100: #19101f;
+$clrBlue100: #4e47a4;
+$clrBlue200: #7a75bb; //rgba($clrBlue100, .75)
+$clrBlue300: #a6a3d1; //rgba($clrBlue100, .50)
+$clrBlue400: #d3d1e8; //rgba($clrBlue100, .25)
 
 /*#endregion*/

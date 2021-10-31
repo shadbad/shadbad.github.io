@@ -135,7 +135,7 @@ a {
 }
 
 /*#endregion*/
-/*#region Purpule*/
+/*#region Blue*/
 /*#endregion*/
 /** =================== MONTSERRAT =================== **/
 /** Montserrat Thin **/
@@ -441,18 +441,16 @@ a {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.62em;
-  color: #212222;
+  color: #333333;
   background-color: #f6f6f6;
 }
 @media print {
   :root {
     background-color: white;
+    font-size: 14px;
   }
 }
 
-body {
-  background-color: red;
-}
 body > div.wrapper {
   max-width: 75rem;
   padding: 1.5rem;
@@ -466,6 +464,448 @@ body > div.wrapper {
   body > div.wrapper {
     min-height: 296.5mm;
     max-width: 210mm;
-    padding: 10mm;
   }
+}
+body > div.wrapper > main {
+  width: calc((100% - 6rem) / 4 * 3);
+  float: right;
+}
+@media print {
+  body > div.wrapper > main {
+    width: 100%;
+    float: none;
+    margin-left: 0;
+  }
+}
+body > div.wrapper > main section.intro {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+body > div.wrapper > main section.intro h1 {
+  margin-bottom: 1rem;
+}
+body > div.wrapper > main section.intro h1 span {
+  display: block;
+  line-height: 1em;
+  color: #4e47a4;
+}
+body > div.wrapper > main section.intro h1 span:first-of-type {
+  font-weight: 700;
+  font-size: 3.5rem;
+  margin-bottom: 0.25rem;
+}
+body > div.wrapper > main section.intro h1 span:last-of-type {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+body > div.wrapper > main section.intro > a {
+  display: block;
+  color: #4e47a4;
+  font-size: 0.875rem;
+  line-height: 1.125em;
+  float: left;
+  clear: left;
+  position: relative;
+}
+body > div.wrapper > main section.intro > a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.125rem;
+  background-color: #a6a3d1;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+body > div.wrapper > main section.intro > a:hover::after {
+  transform: scaleX(1);
+}
+body > div.wrapper > main section.intro ul.contact {
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+body > div.wrapper > main section.intro ul.contact li {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+body > div.wrapper > main section.intro ul.contact li:last-of-type {
+  margin-bottom: 0;
+}
+body > div.wrapper > main section.intro ul.contact li a {
+  letter-spacing: 0.125rem;
+  display: block;
+  height: 2rem;
+  line-height: 2rem;
+  font-weight: 500;
+  position: relative;
+  padding-left: 2rem;
+  box-sizing: border-box;
+  transition: color 0.3s ease-in-out;
+}
+body > div.wrapper > main section.intro ul.contact li a::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2rem;
+  height: 2rem;
+  line-height: 1.9rem;
+  text-align: center;
+  font-size: 1.125rem;
+  color: #a3a2a2;
+  transition: color 0.3s ease-in-out 0.2s;
+}
+body > div.wrapper > main section.intro ul.contact li a:hover {
+  color: #4e47a4;
+}
+body > div.wrapper > main section.intro ul.contact li a:hover::before {
+  color: #7a75bb;
+}
+body > div.wrapper > main section.summary {
+  position: relative;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+body > div.wrapper > main section.summary p {
+  font-size: 0.875rem;
+}
+body > div.wrapper > main section.summary p strong {
+  font-weight: 600;
+}
+body > div.wrapper > main section.summary p em {
+  font-weight: 600;
+  font-style: italic;
+}
+body > div.wrapper > main section.experience > div {
+  margin-bottom: 2rem;
+}
+body > div.wrapper > main section.experience > div h3 {
+  overflow: hidden;
+  margin-bottom: 0.125rem;
+}
+body > div.wrapper > main section.experience > div h3 span {
+  display: block;
+  float: left;
+  height: 1.5rem;
+  line-height: 1.5rem;
+}
+body > div.wrapper > main section.experience > div h3 span.title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+body > div.wrapper > main section.experience > div h3 span.company {
+  position: relative;
+  padding-left: 2rem;
+  line-height: 1.6rem;
+  font-weight: 500;
+  color: #767474;
+}
+body > div.wrapper > main section.experience > div h3 span.company::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1.5rem;
+  width: 2rem;
+  line-height: 1.5rem;
+  text-align: center;
+  font-size: 1rem;
+  color: #767474;
+  font-weight: normal;
+}
+body > div.wrapper > main section.experience > div p:first-of-type {
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  overflow: hidden;
+}
+body > div.wrapper > main section.experience > div p:first-of-type time {
+  float: left;
+  display: block;
+  line-height: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  font-weight: 500;
+}
+body > div.wrapper > main section.experience > div p:first-of-type span {
+  font-weight: 500;
+  display: block;
+  float: left;
+  line-height: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+}
+body > div.wrapper > main section.experience > div p:first-of-type span::before {
+  content: "//";
+  letter-spacing: 0.25rem;
+  float: left;
+  display: block;
+  margin-right: 0.25rem;
+  font-weight: 500;
+  line-height: 1.6rem;
+  height: 1.5rem;
+  color: #a3a2a2;
+}
+body > div.wrapper > main section.experience > div p:first-of-type span:last-of-type {
+  margin-right: 0;
+}
+body > div.wrapper > main section.experience > div ul {
+  font-size: 0.875rem;
+  line-height: 1.25em;
+  box-sizing: border-box;
+  padding-left: 1.5rem;
+}
+body > div.wrapper > main section.experience > div ul li {
+  display: block;
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.5em;
+}
+body > div.wrapper > main section.experience > div ul li::before {
+  content: "";
+  height: 0.5rem;
+  width: 0.5rem;
+  position: absolute;
+  top: 0.4rem;
+  left: 0;
+  box-sizing: border-box;
+  background-color: #a6a3d1;
+  border-radius: 0.125rem;
+}
+body > div.wrapper > main section.experience > div ul li a {
+  text-decoration: underline;
+  transition: color 0.3s ease-in-out;
+}
+body > div.wrapper > main section.experience > div ul li a:hover {
+  color: #4e47a4;
+}
+body > div.wrapper > aside {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  bottom: 1.5rem;
+  width: calc((100% - 6rem) / 4);
+  box-sizing: border-box;
+}
+@media print {
+  body > div.wrapper > aside {
+    position: relative;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+}
+body > div.wrapper > aside a {
+  text-decoration: underline;
+  transition: color 0.3s ease-in-out;
+}
+body > div.wrapper > aside a:hover {
+  color: #4e47a4;
+}
+body > div.wrapper > aside > img {
+  display: block;
+  margin: 0 0 2rem 0;
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+@media print {
+  body > div.wrapper > aside > img {
+    display: none;
+  }
+}
+body > div.wrapper > aside ul.skill li {
+  display: block;
+  overflow: hidden;
+  margin-bottom: 0.25rem;
+  position: relative;
+  height: 1.5rem;
+}
+body > div.wrapper > aside ul.skill li:last-of-type {
+  margin-bottom: 0;
+}
+body > div.wrapper > aside ul.skill li span {
+  display: block;
+  float: left;
+  font-size: 0.75rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  width: calc((100% - 0.5rem) / 3);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+body > div.wrapper > aside ul.skill li::before {
+  content: "";
+  width: calc((100% - 0.5rem) / 3 * 2);
+  position: absolute;
+  left: calc((100% - 0.5rem) / 3);
+  margin-left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 0.125rem;
+  background-color: #d1d1d1;
+}
+body > div.wrapper > aside ul.skill li::after {
+  content: "";
+  width: calc((100% - 0.5rem) / 3 * 2);
+  position: absolute;
+  left: calc((100% - 0.5rem) / 3);
+  margin-left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 0.125rem;
+  background-color: #7a75bb;
+}
+body > div.wrapper > aside ul.skill li[data-score="10"]::after {
+  width: calc((100% - 0.5rem) / 3 * 2 * 0.1);
+}
+body > div.wrapper > aside ul.skill li[data-score="20"]::after {
+  width: calc((100% - 0.5rem) / 3 * 2 * 0.2);
+}
+body > div.wrapper > aside ul.skill li[data-score="30"]::after {
+  width: calc((100% - 0.5rem) / 3 * 2 * 0.3);
+}
+body > div.wrapper > aside ul.skill li[data-score="40"]::after {
+  width: calc((100% - 0.5rem) / 3 * 2 * 0.4);
+}
+body > div.wrapper > aside ul.skill li[data-score="50"]::after {
+  width: calc((100% - 0.5rem) / 3 * 2 * 0.5);
+}
+body > div.wrapper > aside ul.skill li[data-score="60"]::after {
+  width: calc((100% - 0.5rem) / 3 * 2 * 0.6);
+}
+body > div.wrapper > aside ul.skill li[data-score="70"]::after {
+  width: calc((100% - 0.5rem) / 3 * 2 * 0.7);
+}
+body > div.wrapper > aside ul.skill li[data-score="80"]::after {
+  width: calc((100% - 0.5rem) / 3 * 2 * 0.8);
+}
+body > div.wrapper > aside ul.skill li[data-score="90"]::after {
+  width: calc((100% - 0.5rem) / 3 * 2 * 0.9);
+}
+body > div.wrapper > aside ul.skill li[data-score="100"]::after {
+  width: calc((100% - 0.5rem) / 3 * 2);
+}
+body > div.wrapper > aside ul.bullet {
+  overflow: hidden;
+  font-size: 0.75rem;
+}
+body > div.wrapper > aside ul.bullet li {
+  display: block;
+  overflow: hidden;
+  margin-bottom: 0.25rem;
+  position: relative;
+  height: 1.5rem;
+  float: left;
+  width: calc((100% - 1rem) / 2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-sizing: border-box;
+  padding-left: 1rem;
+  position: relative;
+  margin-left: 1rem;
+}
+body > div.wrapper > aside ul.bullet li:nth-of-type(2n+1) {
+  clear: left;
+  margin-left: 0;
+}
+body > div.wrapper > aside ul.bullet li::before {
+  content: "";
+  position: absolute;
+  top: 0.625rem;
+  left: 0;
+  width: 0.5rem;
+  height: 0.25rem;
+  border-radius: 50%;
+  background-color: #7a75bb;
+  box-sizing: border-box;
+}
+body > div.wrapper > aside dl {
+  overflow: hidden;
+  font-size: 0.75rem;
+}
+body > div.wrapper > aside dl dt {
+  line-height: 1em;
+  float: left;
+  clear: left;
+  margin-bottom: 1rem;
+  margin-right: 0.5rem;
+  font-weight: 500;
+  color: #767474;
+}
+body > div.wrapper > aside dl dt::after {
+  content: ": ";
+}
+body > div.wrapper > aside dl dd {
+  line-height: 1em;
+  float: left;
+  margin-bottom: 1rem;
+}
+body > div.wrapper > aside dl dd a {
+  text-decoration: underline;
+}
+body > div.wrapper > aside > div {
+  box-sizing: border-box;
+  margin-bottom: 2rem;
+  font-size: 0.875rem;
+}
+body > div.wrapper > aside > div:last-of-type {
+  margin-bottom: 0;
+}
+body > div.wrapper > aside > div h3 {
+  font-style: italic;
+  text-align: right;
+  line-height: 1.25em;
+  vertical-align: top;
+  color: #a3a2a2;
+  padding-bottom: 0.125rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.75rem;
+  position: relative;
+}
+body > div.wrapper > aside > div h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0.0625rem;
+  background: linear-gradient(to left, #a3a2a2, transparent);
+}
+body > div.wrapper > aside > div.education > div h4 {
+  font-weight: 700;
+  line-height: 1em;
+  margin-bottom: 0.5rem;
+}
+body > div.wrapper > aside > div.education > div p {
+  color: #767474;
+  overflow: hidden;
+}
+body > div.wrapper > aside > div.education > div p time {
+  line-height: 1em;
+  display: block;
+  float: left;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-right: 0.25rem;
+}
+body > div.wrapper > aside > div.education > div p time::after {
+  content: "//";
+  float: right;
+  margin-left: 0.5rem;
+  color: #a3a2a2;
+  letter-spacing: 0.125rem;
+}
+body > div.wrapper > aside > div.education > div p a {
+  display: block;
+  float: left;
+  line-height: 1em;
+  font-size: 0.75rem;
 }
