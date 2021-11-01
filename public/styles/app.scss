@@ -293,6 +293,15 @@ body {
                   color: $clrBlue100;
                 }
               }
+
+              strong{
+                font-weight: 600;
+              }
+
+              em{
+                font-weight: 600;
+                font-style: italic;
+              }
             }
           }
         }

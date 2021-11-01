@@ -683,6 +683,13 @@ body > div.wrapper > main section.experience > div ul li a {
 body > div.wrapper > main section.experience > div ul li a:hover {
   color: #4e47a4;
 }
+body > div.wrapper > main section.experience > div ul li strong {
+  font-weight: 600;
+}
+body > div.wrapper > main section.experience > div ul li em {
+  font-weight: 600;
+  font-style: italic;
+}
 body > div.wrapper > aside {
   position: absolute;
   top: 1.5rem;
