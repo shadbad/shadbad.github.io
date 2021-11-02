@@ -451,6 +451,18 @@ a {
   }
 }
 
+/* #region mixin */
+/* #endregion */
+body::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+body::-webkit-scrollbar-track {
+  background-color: #d1d1d1;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #a6a3d1;
+}
 body > div.wrapper {
   max-width: 75rem;
   padding: 1.5rem;
@@ -470,6 +482,12 @@ body > div.wrapper > main {
   width: calc((100% - 6rem) / 4 * 3);
   float: right;
 }
+@media screen and (max-width: 900px) {
+  body > div.wrapper > main {
+    width: 100%;
+    float: none;
+  }
+}
 @media print {
   body > div.wrapper > main {
     width: 100%;
@@ -481,6 +499,34 @@ body > div.wrapper > main section.intro {
   position: relative;
   overflow: hidden;
   margin-bottom: 2rem;
+}
+@media screen and (max-width: 900px) {
+  body > div.wrapper > main section.intro {
+    margin-bottom: 1.5rem;
+  }
+  body > div.wrapper > main section.intro::before {
+    content: "";
+    display: block;
+    width: 10rem;
+    height: 10rem;
+    background-image: url(../images/sina-shadbad.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    float: left;
+    margin-right: 1.5rem;
+    border-radius: 0.5rem;
+  }
+}
+@media screen and (max-width: 680px) {
+  body > div.wrapper > main section.intro::before {
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  body > div.wrapper > main section.intro {
+    margin-bottom: 1rem;
+  }
 }
 body > div.wrapper > main section.intro h1 {
   margin-bottom: 1rem;
@@ -495,9 +541,19 @@ body > div.wrapper > main section.intro h1 span:first-of-type {
   font-size: 3.5rem;
   margin-bottom: 0.25rem;
 }
+@media screen and (max-width: 470px) {
+  body > div.wrapper > main section.intro h1 span:first-of-type {
+    font-size: 2.5rem;
+  }
+}
 body > div.wrapper > main section.intro h1 span:last-of-type {
   font-size: 1.5rem;
   font-weight: 500;
+}
+@media screen and (max-width: 470px) {
+  body > div.wrapper > main section.intro h1 span:last-of-type {
+    font-size: 1rem;
+  }
 }
 body > div.wrapper > main section.intro > a {
   display: block;
@@ -507,6 +563,13 @@ body > div.wrapper > main section.intro > a {
   float: left;
   clear: left;
   position: relative;
+}
+@media screen and (max-width: 900px) {
+  body > div.wrapper > main section.intro > a {
+    float: none;
+    clear: none;
+    display: inline-block;
+  }
 }
 body > div.wrapper > main section.intro > a::after {
   content: "";
@@ -530,9 +593,51 @@ body > div.wrapper > main section.intro ul.contact {
   right: 0;
   transform: translateY(-50%);
 }
+@media screen and (max-width: 1080px) {
+  body > div.wrapper > main section.intro ul.contact {
+    clear: both;
+    padding-top: 1rem;
+    position: relative;
+    top: 0;
+    right: 0;
+    transform: translateY(0);
+  }
+}
+@media screen and (max-width: 900px) {
+  body > div.wrapper > main section.intro ul.contact {
+    float: none;
+    clear: none;
+    padding-top: 0.5rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  body > div.wrapper > main section.intro ul.contact {
+    padding-top: 0;
+  }
+}
 body > div.wrapper > main section.intro ul.contact li {
   width: 100%;
   margin-bottom: 0.5rem;
+}
+@media screen and (max-width: 1080px) {
+  body > div.wrapper > main section.intro ul.contact li {
+    float: left;
+    width: auto;
+    margin-left: 1rem;
+    margin-bottom: 0;
+  }
+  body > div.wrapper > main section.intro ul.contact li:nth-of-type(3n + 1) {
+    margin-left: 0;
+    clear: left;
+  }
+}
+@media screen and (max-width: 500px) {
+  body > div.wrapper > main section.intro ul.contact li {
+    clear: left;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 1rem;
+  }
 }
 body > div.wrapper > main section.intro ul.contact li:last-of-type {
   margin-bottom: 0;
@@ -548,17 +653,29 @@ body > div.wrapper > main section.intro ul.contact li a {
   box-sizing: border-box;
   transition: color 0.3s ease-in-out;
 }
+@media screen and (max-width: 1080px) {
+  body > div.wrapper > main section.intro ul.contact li a {
+    letter-spacing: normal;
+    padding-left: 0;
+  }
+}
 body > div.wrapper > main section.intro ul.contact li a::before {
   position: absolute;
   top: 0;
   left: 0;
-  width: 2rem;
+  width: 1rem;
   height: 2rem;
   line-height: 1.9rem;
   text-align: center;
   font-size: 1.125rem;
   color: #a3a2a2;
   transition: color 0.3s ease-in-out 0.2s;
+}
+@media screen and (max-width: 1080px) {
+  body > div.wrapper > main section.intro ul.contact li a::before {
+    display: none;
+    font-size: 1rem;
+  }
 }
 body > div.wrapper > main section.intro ul.contact li a:hover {
   color: #4e47a4;
@@ -568,7 +685,6 @@ body > div.wrapper > main section.intro ul.contact li a:hover::before {
 }
 body > div.wrapper > main section.summary {
   position: relative;
-  padding-bottom: 1rem;
   margin-bottom: 2rem;
 }
 body > div.wrapper > main section.summary p {
@@ -580,6 +696,20 @@ body > div.wrapper > main section.summary p strong {
 body > div.wrapper > main section.summary p em {
   font-weight: 600;
   font-style: italic;
+}
+body > div.wrapper > main section.experience > h2 {
+  font-size: 1.25rem;
+  line-height: 1em;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0;
+  color: #4e47a4;
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  body > div.wrapper > main section.experience > h2 {
+    display: block;
+  }
 }
 body > div.wrapper > main section.experience > div {
   margin-bottom: 2rem;
@@ -597,22 +727,28 @@ body > div.wrapper > main section.experience > div h3 span {
 body > div.wrapper > main section.experience > div h3 span.title {
   font-size: 1rem;
   font-weight: 700;
+  margin-right: 0.25rem;
 }
 body > div.wrapper > main section.experience > div h3 span.company {
   position: relative;
-  padding-left: 2rem;
+  padding-left: 1.25rem;
   line-height: 1.6rem;
   font-weight: 500;
   color: #767474;
+}
+@media screen and (max-width: 700px) {
+  body > div.wrapper > main section.experience > div h3 span.company {
+    clear: left;
+  }
 }
 body > div.wrapper > main section.experience > div h3 span.company::before {
   position: absolute;
   top: 0;
   left: 0;
   height: 1.5rem;
-  width: 2rem;
+  width: 1rem;
   line-height: 1.5rem;
-  text-align: center;
+  text-align: left;
   font-size: 1rem;
   color: #767474;
   font-weight: normal;
@@ -622,6 +758,11 @@ body > div.wrapper > main section.experience > div p:first-of-type {
   font-size: 0.75rem;
   overflow: hidden;
 }
+@media screen and (max-width: 400px) {
+  body > div.wrapper > main section.experience > div p:first-of-type {
+    padding-left: 1.25rem;
+  }
+}
 body > div.wrapper > main section.experience > div p:first-of-type time {
   float: left;
   display: block;
@@ -630,6 +771,11 @@ body > div.wrapper > main section.experience > div p:first-of-type time {
   margin-right: 0.5rem;
   font-weight: 500;
 }
+@media screen and (max-width: 500px) {
+  body > div.wrapper > main section.experience > div p:first-of-type time {
+    margin-right: 0.25rem;
+  }
+}
 body > div.wrapper > main section.experience > div p:first-of-type span {
   font-weight: 500;
   display: block;
@@ -637,6 +783,11 @@ body > div.wrapper > main section.experience > div p:first-of-type span {
   line-height: 1.5rem;
   height: 1.5rem;
   margin-right: 0.5rem;
+}
+@media screen and (max-width: 400px) {
+  body > div.wrapper > main section.experience > div p:first-of-type span {
+    clear: left;
+  }
 }
 body > div.wrapper > main section.experience > div p:first-of-type span::before {
   content: "//";
@@ -648,6 +799,11 @@ body > div.wrapper > main section.experience > div p:first-of-type span::before 
   line-height: 1.6rem;
   height: 1.5rem;
   color: #a3a2a2;
+}
+@media screen and (max-width: 500px) {
+  body > div.wrapper > main section.experience > div p:first-of-type span::before {
+    display: none;
+  }
 }
 body > div.wrapper > main section.experience > div p:first-of-type span:last-of-type {
   margin-right: 0;
@@ -698,6 +854,15 @@ body > div.wrapper > aside {
   width: calc((100% - 6rem) / 4);
   box-sizing: border-box;
 }
+@media screen and (max-width: 900px) {
+  body > div.wrapper > aside {
+    position: relative;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+}
 @media print {
   body > div.wrapper > aside {
     position: relative;
@@ -722,6 +887,11 @@ body > div.wrapper > aside > img {
   border-radius: 0.5rem;
 }
 @media print {
+  body > div.wrapper > aside > img {
+    display: none;
+  }
+}
+@media screen and (max-width: 900px) {
   body > div.wrapper > aside > img {
     display: none;
   }
@@ -819,9 +989,15 @@ body > div.wrapper > aside ul.bullet li {
   position: relative;
   margin-left: 1rem;
 }
-body > div.wrapper > aside ul.bullet li:nth-of-type(2n+1) {
+body > div.wrapper > aside ul.bullet li:nth-of-type(2n + 1) {
   clear: left;
   margin-left: 0;
+}
+@media screen and (max-width: 1160px) {
+  body > div.wrapper > aside ul.bullet li {
+    width: 100%;
+    margin-left: 0;
+  }
 }
 body > div.wrapper > aside ul.bullet li::before {
   content: "";
@@ -885,6 +1061,25 @@ body > div.wrapper > aside > div h3::after {
   right: 0;
   height: 0.0625rem;
   background: linear-gradient(to left, #a3a2a2, transparent);
+}
+@media screen and (max-width: 900px) {
+  body > div.wrapper > aside > div h3 {
+    font-style: normal;
+    text-align: left;
+    vertical-align: middle;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    color: #333333;
+    font-size: 1.25rem;
+    line-height: 1em;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0;
+    color: #4e47a4;
+  }
+  body > div.wrapper > aside > div h3::after {
+    display: none;
+  }
 }
 body > div.wrapper > aside > div.education > div h4 {
   font-weight: 700;
