@@ -34,13 +34,13 @@
   }
 }
 
-@mixin headings{
+@mixin headings {
   font-size: 1.25rem;
   line-height: 1em;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   padding-bottom: 0;
-  color:$clrBlue100;
+  color: $clrBlue100;
 }
 
 /* #endregion */
@@ -292,12 +292,15 @@ body {
       }
 
       section.experience {
-
-        &>h2{
+        & > h2 {
           @include headings;
           display: none;
 
-          @media screen and (max-width:900px) {
+          @media screen and (max-width: 900px) {
+            display: block;
+          }
+
+          @media print{
             display: block;
           }
         }
@@ -317,7 +320,7 @@ body {
               &.title {
                 font-size: 1rem;
                 font-weight: 700;
-                margin-right: .25rem;
+                margin-right: 0.25rem;
               }
 
               &.company {
@@ -327,7 +330,7 @@ body {
                 font-weight: 500;
                 color: $clrGrey100;
 
-                @media screen and (max-width:700px) {
+                @media screen and (max-width: 700px) {
                   clear: left;
                 }
 
@@ -353,8 +356,8 @@ body {
               font-size: 0.75rem;
               overflow: hidden;
 
-              @media screen and (max-width:400px){
-               padding-left: 1.25rem;
+              @media screen and (max-width: 400px) {
+                padding-left: 1.25rem;
               }
 
               time {
@@ -365,8 +368,8 @@ body {
                 margin-right: 0.5rem;
                 font-weight: 500;
 
-                @media screen and (max-width:500px){
-                  margin-right: .25rem;
+                @media screen and (max-width: 500px) {
+                  margin-right: 0.25rem;
                 }
               }
 
@@ -378,7 +381,7 @@ body {
                 height: 1.5rem;
                 margin-right: 0.5rem;
 
-                @media screen and (max-width:400px){
+                @media screen and (max-width: 400px) {
                   clear: left;
                 }
 
@@ -393,7 +396,7 @@ body {
                   height: 1.5rem;
                   color: $clrGrey200;
 
-                  @media screen and (max-width:500px){
+                  @media screen and (max-width: 500px) {
                     display: none;
                   }
                 }
@@ -504,7 +507,7 @@ body {
       }
 
       ul.skill {
-
+        overflow: hidden;
         li {
           display: block;
           overflow: hidden;
@@ -514,6 +517,40 @@ body {
 
           &:last-of-type {
             margin-bottom: 0;
+          }
+
+          @media screen and (max-width:900px) {
+            width: calc((100% - 2rem)/2);
+            float: left;
+            margin-left: 2rem;
+
+            &:nth-of-type(2n+1){
+              margin-left: 0;
+              clear: left;
+            }
+          }
+
+          @media screen and (max-width:500px) {
+            width: 100%;
+            float: left;
+            margin-left: 0;
+
+            &:nth-of-type(2n+1){
+              margin-left: 0;
+              clear: left;
+            }
+          }
+
+          @media print {
+            width: calc((100% - 4rem)/3);
+            float: left;
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+
+            &:nth-of-type(3n+1){
+              margin-left: 0;
+              clear: left;
+            }
           }
 
           span {
@@ -717,7 +754,7 @@ body {
             background: linear-gradient(to left, $clrGrey200, transparent);
           }
 
-          @media screen and (max-width: 900px){
+          @media screen and (max-width: 900px) {
             font-style: normal;
             text-align: left;
             vertical-align: middle;
@@ -726,7 +763,21 @@ body {
             color: $clrText;
             @include headings;
 
-            &::after{
+            &::after {
+              display: none;
+            }
+          }
+
+          @media print {
+            font-style: normal;
+            text-align: left;
+            vertical-align: middle;
+            padding-bottom: 0;
+            margin-bottom: 0;
+            color: $clrText;
+            @include headings;
+
+            &::after {
               display: none;
             }
           }

@@ -701,12 +701,17 @@ body > div.wrapper > main section.experience > h2 {
   font-size: 1.25rem;
   line-height: 1em;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   padding-bottom: 0;
   color: #4e47a4;
   display: none;
 }
 @media screen and (max-width: 900px) {
+  body > div.wrapper > main section.experience > h2 {
+    display: block;
+  }
+}
+@media print {
   body > div.wrapper > main section.experience > h2 {
     display: block;
   }
@@ -896,6 +901,9 @@ body > div.wrapper > aside > img {
     display: none;
   }
 }
+body > div.wrapper > aside ul.skill {
+  overflow: hidden;
+}
 body > div.wrapper > aside ul.skill li {
   display: block;
   overflow: hidden;
@@ -905,6 +913,40 @@ body > div.wrapper > aside ul.skill li {
 }
 body > div.wrapper > aside ul.skill li:last-of-type {
   margin-bottom: 0;
+}
+@media screen and (max-width: 900px) {
+  body > div.wrapper > aside ul.skill li {
+    width: calc((100% - 2rem) / 2);
+    float: left;
+    margin-left: 2rem;
+  }
+  body > div.wrapper > aside ul.skill li:nth-of-type(2n+1) {
+    margin-left: 0;
+    clear: left;
+  }
+}
+@media screen and (max-width: 500px) {
+  body > div.wrapper > aside ul.skill li {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+  }
+  body > div.wrapper > aside ul.skill li:nth-of-type(2n+1) {
+    margin-left: 0;
+    clear: left;
+  }
+}
+@media print {
+  body > div.wrapper > aside ul.skill li {
+    width: calc((100% - 4rem) / 3);
+    float: left;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+  }
+  body > div.wrapper > aside ul.skill li:nth-of-type(3n+1) {
+    margin-left: 0;
+    clear: left;
+  }
 }
 body > div.wrapper > aside ul.skill li span {
   display: block;
@@ -1073,7 +1115,26 @@ body > div.wrapper > aside > div h3::after {
     font-size: 1.25rem;
     line-height: 1em;
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0;
+    color: #4e47a4;
+  }
+  body > div.wrapper > aside > div h3::after {
+    display: none;
+  }
+}
+@media print {
+  body > div.wrapper > aside > div h3 {
+    font-style: normal;
+    text-align: left;
+    vertical-align: middle;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    color: #333333;
+    font-size: 1.25rem;
+    line-height: 1em;
+    font-weight: 700;
+    margin-bottom: 1rem;
     padding-bottom: 0;
     color: #4e47a4;
   }
