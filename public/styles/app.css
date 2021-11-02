@@ -920,7 +920,7 @@ body > div.wrapper > aside ul.skill li:last-of-type {
     float: left;
     margin-left: 2rem;
   }
-  body > div.wrapper > aside ul.skill li:nth-of-type(2n+1) {
+  body > div.wrapper > aside ul.skill li:nth-of-type(2n + 1) {
     margin-left: 0;
     clear: left;
   }
@@ -931,7 +931,7 @@ body > div.wrapper > aside ul.skill li:last-of-type {
     float: left;
     margin-left: 0;
   }
-  body > div.wrapper > aside ul.skill li:nth-of-type(2n+1) {
+  body > div.wrapper > aside ul.skill li:nth-of-type(2n + 1) {
     margin-left: 0;
     clear: left;
   }
@@ -943,7 +943,7 @@ body > div.wrapper > aside ul.skill li:last-of-type {
     margin-left: 2rem;
     margin-bottom: 1rem;
   }
-  body > div.wrapper > aside ul.skill li:nth-of-type(3n+1) {
+  body > div.wrapper > aside ul.skill li:nth-of-type(3n + 1) {
     margin-left: 0;
     clear: left;
   }
@@ -1041,6 +1041,15 @@ body > div.wrapper > aside ul.bullet li:nth-of-type(2n + 1) {
     margin-left: 0;
   }
 }
+@media print {
+  body > div.wrapper > aside ul.bullet li {
+    width: calc((100% - 6rem) / 4);
+    margin-left: 0;
+  }
+  body > div.wrapper > aside ul.bullet li:nth-of-type(2n + 1) {
+    clear: none;
+  }
+}
 body > div.wrapper > aside ul.bullet li::before {
   content: "";
   position: absolute;
@@ -1052,28 +1061,44 @@ body > div.wrapper > aside ul.bullet li::before {
   background-color: #7a75bb;
   box-sizing: border-box;
 }
-body > div.wrapper > aside dl {
+body > div.wrapper > aside ul.key-value {
   overflow: hidden;
   font-size: 0.75rem;
 }
-body > div.wrapper > aside dl dt {
+body > div.wrapper > aside ul.key-value li {
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+@media print {
+  body > div.wrapper > aside ul.key-value li {
+    width: calc((100% - 4rem) / 3);
+    float: left;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+  }
+  body > div.wrapper > aside ul.key-value li:nth-of-type(3n+1) {
+    margin-left: 0;
+    clear: left;
+  }
+}
+body > div.wrapper > aside ul.key-value li span.key {
+  display: block;
   line-height: 1em;
   float: left;
   clear: left;
-  margin-bottom: 1rem;
   margin-right: 0.5rem;
   font-weight: 500;
   color: #767474;
 }
-body > div.wrapper > aside dl dt::after {
+body > div.wrapper > aside ul.key-value li span.key::after {
   content: ": ";
 }
-body > div.wrapper > aside dl dd {
+body > div.wrapper > aside ul.key-value li .value {
+  display: block;
   line-height: 1em;
   float: left;
-  margin-bottom: 1rem;
 }
-body > div.wrapper > aside dl dd a {
+body > div.wrapper > aside ul.key-value li a.value {
   text-decoration: underline;
 }
 body > div.wrapper > aside > div {
@@ -1171,4 +1196,9 @@ body > div.wrapper > aside > div.education > div p a {
   float: left;
   line-height: 1em;
   font-size: 0.75rem;
+}
+@media print {
+  body > div.wrapper > aside > div.info {
+    margin-bottom: 1rem;
+  }
 }
