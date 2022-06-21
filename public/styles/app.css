@@ -399,7 +399,8 @@ a {
   font-style: normal;
   font-display: block;
 }
-[class^=icon-]::before, [class*=" icon-"]::before {
+[class^=icon-]::before,
+[class*=" icon-"]::before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: "icomoon" !important;
   speak: never;
@@ -412,28 +413,28 @@ a {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-at-sign:before {
-  content: "\e903";
+.icon-square:before {
+  content: "\e905";
 }
 
-.icon-linkedin:before {
+.icon-skype:before {
   content: "\e900";
 }
 
-.icon-mail:before {
+.icon-at-sign:before {
   content: "\e901";
 }
 
-.icon-phone:before {
+.icon-github:before {
   content: "\e902";
 }
 
-.icon-square:before {
-  content: "\e904";
+.icon-linkedin:before {
+  content: "\e903";
 }
 
-.icon-map:before {
-  content: "\e905";
+.icon-mail:before {
+  content: "\e904";
 }
 
 :root {
@@ -441,8 +442,8 @@ a {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.62em;
-  color: #333333;
-  background-color: #f6f6f6;
+  color: black;
+  background-color: white;
 }
 @media print {
   :root {
@@ -464,7 +465,7 @@ body::-webkit-scrollbar-thumb {
   background-color: #a6a3d1;
 }
 body > div.wrapper {
-  max-width: 75rem;
+  max-width: 210mm;
   padding: 1.5rem;
   width: 100%;
   margin: auto;
@@ -479,203 +480,106 @@ body > div.wrapper {
   }
 }
 body > div.wrapper > main {
-  width: calc((100% - 6rem) / 4 * 3);
-  float: right;
+  display: block;
 }
-@media screen and (max-width: 900px) {
-  body > div.wrapper > main {
-    width: 100%;
-    float: none;
-  }
-}
-@media print {
-  body > div.wrapper > main {
-    width: 100%;
-    float: none;
-    margin-left: 0;
-  }
+body > div.wrapper > main h2 {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+  font-size: 1.25rem;
+  line-height: 1em;
+  margin-bottom: 0.5rem;
 }
 body > div.wrapper > main section.intro {
-  position: relative;
   overflow: hidden;
   margin-bottom: 2rem;
 }
-@media screen and (max-width: 900px) {
-  body > div.wrapper > main section.intro {
-    margin-bottom: 1.5rem;
-  }
-  body > div.wrapper > main section.intro::before {
-    content: "";
-    display: block;
-    width: 10rem;
-    height: 10rem;
-    background-image: url(../images/sina-shadbad.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    float: left;
-    margin-right: 1.5rem;
-    border-radius: 0.5rem;
-  }
-}
-@media screen and (max-width: 680px) {
-  body > div.wrapper > main section.intro::before {
-    display: none;
-  }
-}
-@media screen and (max-width: 500px) {
-  body > div.wrapper > main section.intro {
-    margin-bottom: 1rem;
-  }
-}
 body > div.wrapper > main section.intro h1 {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  padding-left: 9rem;
+  position: relative;
+  min-height: 8rem;
+  padding-top: 1.875rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+@media (max-width: 500px) {
+  body > div.wrapper > main section.intro h1 {
+    min-height: 6rem;
+    padding-top: 0;
+    padding-left: 7rem;
+  }
+}
+body > div.wrapper > main section.intro h1::before {
+  content: "";
+  width: 8rem;
+  height: 8rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(/public/images/sina-shadbad.jpg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 0.5rem;
+}
+@media (max-width: 500px) {
+  body > div.wrapper > main section.intro h1::before {
+    width: 6rem;
+    height: 6rem;
+  }
 }
 body > div.wrapper > main section.intro h1 span {
   display: block;
   line-height: 1em;
-  color: #4e47a4;
 }
 body > div.wrapper > main section.intro h1 span:first-of-type {
   font-weight: 700;
-  font-size: 3.5rem;
-  margin-bottom: 0.25rem;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #4e47a4;
+  letter-spacing: 0.0625rem;
 }
-@media screen and (max-width: 470px) {
+@media (max-width: 500px) {
   body > div.wrapper > main section.intro h1 span:first-of-type {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 body > div.wrapper > main section.intro h1 span:last-of-type {
-  font-size: 1.5rem;
   font-weight: 500;
+  font-size: 1.25rem;
+  letter-spacing: 0.125rem;
 }
-@media screen and (max-width: 470px) {
+@media (max-width: 500px) {
   body > div.wrapper > main section.intro h1 span:last-of-type {
     font-size: 1rem;
   }
 }
-body > div.wrapper > main section.intro > a {
-  display: block;
-  color: #4e47a4;
-  font-size: 0.875rem;
-  line-height: 1.125em;
-  float: left;
-  clear: left;
-  position: relative;
-}
-@media screen and (max-width: 900px) {
-  body > div.wrapper > main section.intro > a {
-    float: none;
-    clear: none;
-    display: inline-block;
-  }
-}
-body > div.wrapper > main section.intro > a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 0.125rem;
-  background-color: #a6a3d1;
-  transform-origin: left;
-  transform: scaleX(0);
-  transition: transform 0.3s ease-in-out;
-}
-body > div.wrapper > main section.intro > a:hover::after {
-  transform: scaleX(1);
-}
 body > div.wrapper > main section.intro ul.contact {
-  overflow: hidden;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
+  float: left;
+  width: calc((100% - 1rem) / 2);
+  font-size: 0.875rem;
 }
-@media screen and (max-width: 1080px) {
+@media (max-width: 500px) {
   body > div.wrapper > main section.intro ul.contact {
-    clear: both;
-    padding-top: 1rem;
-    position: relative;
-    top: 0;
-    right: 0;
-    transform: translateY(0);
-  }
-}
-@media screen and (max-width: 900px) {
-  body > div.wrapper > main section.intro ul.contact {
-    float: none;
-    clear: none;
-    padding-top: 0.5rem;
-  }
-}
-@media screen and (max-width: 500px) {
-  body > div.wrapper > main section.intro ul.contact {
-    padding-top: 0;
+    width: 100%;
+    margin-bottom: 1rem;
   }
 }
 body > div.wrapper > main section.intro ul.contact li {
-  width: 100%;
-  margin-bottom: 0.5rem;
-}
-@media screen and (max-width: 1080px) {
-  body > div.wrapper > main section.intro ul.contact li {
-    float: left;
-    width: auto;
-    margin-left: 1rem;
-    margin-bottom: 0;
-  }
-  body > div.wrapper > main section.intro ul.contact li:nth-of-type(3n + 1) {
-    margin-left: 0;
-    clear: left;
-  }
-}
-@media screen and (max-width: 500px) {
-  body > div.wrapper > main section.intro ul.contact li {
-    clear: left;
-    width: 100%;
-    margin-left: 0;
-    margin-top: 1rem;
-  }
+  display: block;
+  overflow: hidden;
 }
 body > div.wrapper > main section.intro ul.contact li:last-of-type {
   margin-bottom: 0;
 }
 body > div.wrapper > main section.intro ul.contact li a {
-  letter-spacing: 0.125rem;
   display: block;
-  height: 2rem;
-  line-height: 2rem;
-  font-weight: 500;
-  position: relative;
-  padding-left: 2rem;
-  box-sizing: border-box;
+  float: left;
+  height: 1.75rem;
+  line-height: 1.75rem;
   transition: color 0.3s ease-in-out;
-}
-@media screen and (max-width: 1080px) {
-  body > div.wrapper > main section.intro ul.contact li a {
-    letter-spacing: normal;
-    padding-left: 0;
-  }
-}
-body > div.wrapper > main section.intro ul.contact li a::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1rem;
-  height: 2rem;
-  line-height: 1.9rem;
-  text-align: center;
-  font-size: 1.125rem;
-  color: #a3a2a2;
-  transition: color 0.3s ease-in-out 0.2s;
-}
-@media screen and (max-width: 1080px) {
-  body > div.wrapper > main section.intro ul.contact li a::before {
-    display: none;
-    font-size: 1rem;
-  }
+  color: black;
 }
 body > div.wrapper > main section.intro ul.contact li a:hover {
   color: #4e47a4;
@@ -683,522 +587,151 @@ body > div.wrapper > main section.intro ul.contact li a:hover {
 body > div.wrapper > main section.intro ul.contact li a:hover::before {
   color: #7a75bb;
 }
-body > div.wrapper > main section.summary {
-  position: relative;
-  margin-bottom: 2rem;
+body > div.wrapper > main section.intro ul.contact li a::before {
+  display: block;
+  float: left;
+  height: 1.75rem;
+  width: 1.5rem;
+  line-height: 1.75rem;
+  text-align: left;
+  color: #767474;
+  transition: color 0.3s ease-in-out;
 }
-body > div.wrapper > main section.summary p {
+body > div.wrapper > main section.intro ul.contact li a.icon-skype::before {
+  font-size: 1.125rem;
+  position: relative;
+  left: -0.125rem;
+  line-height: 1.8rem;
+}
+body > div.wrapper > main section.intro ul.contact li a.icon-linkedin::before {
+  line-height: 1.7rem;
+}
+body > div.wrapper > main section.intro ul.skills-education {
+  width: calc((100% - 1rem) / 2);
+  float: left;
+  margin-left: 1rem;
   font-size: 0.875rem;
 }
-body > div.wrapper > main section.summary p strong {
-  font-weight: 600;
+@media (max-width: 500px) {
+  body > div.wrapper > main section.intro ul.skills-education {
+    width: 100%;
+    margin-left: 0;
+  }
 }
-body > div.wrapper > main section.summary p em {
-  font-weight: 600;
-  font-style: italic;
+body > div.wrapper > main section.intro ul.skills-education > li {
+  display: block;
 }
-body > div.wrapper > main section.experience > h2 {
-  font-size: 1.25rem;
-  line-height: 1em;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  padding-bottom: 0;
-  color: #4e47a4;
+body > div.wrapper > main section.intro ul.skills-education > li:first-of-type {
+  margin-bottom: 0.125rem;
+}
+body > div.wrapper > main section.intro ul.skills-education > li:first-of-type::before {
+  content: "Education: ";
+  font-weight: 500;
+  display: inline-block;
+  margin-right: 0.25rem;
+}
+body > div.wrapper > main section.intro ul.skills-education > li:last-of-type ul {
+  display: inline-block;
+}
+body > div.wrapper > main section.intro ul.skills-education > li:last-of-type ul::before {
+  content: "Top Skills: ";
+  font-weight: 500;
+  display: inline-block;
+  margin-right: 0.25rem;
+}
+body > div.wrapper > main section.intro ul.skills-education > li:last-of-type ul li {
+  display: inline-block;
+}
+body > div.wrapper > main section.intro ul.skills-education > li:last-of-type ul li::after {
+  content: ", ";
+}
+body > div.wrapper > main section.intro ul.skills-education > li:last-of-type ul li:last-of-type::after {
   display: none;
 }
-@media screen and (max-width: 900px) {
-  body > div.wrapper > main section.experience > h2 {
-    display: block;
-  }
+body > div.wrapper > main section.summary {
+  margin-bottom: 2rem;
 }
-@media print {
-  body > div.wrapper > main section.experience > h2 {
-    display: block;
-  }
+body > div.wrapper > main section.experience > h2 {
+  margin-bottom: 1rem;
 }
 body > div.wrapper > main section.experience > div {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 body > div.wrapper > main section.experience > div h3 {
   overflow: hidden;
-  margin-bottom: 0.125rem;
 }
 body > div.wrapper > main section.experience > div h3 span {
   display: block;
   float: left;
-  height: 1.5rem;
-  line-height: 1.5rem;
 }
 body > div.wrapper > main section.experience > div h3 span.title {
+  font-weight: 600;
+  line-height: 1.5rem;
   font-size: 1rem;
-  font-weight: 700;
-  margin-right: 0.25rem;
+  height: 1.5rem;
 }
 body > div.wrapper > main section.experience > div h3 span.company {
-  position: relative;
-  padding-left: 1.25rem;
-  line-height: 1.6rem;
+  overflow: hidden;
   font-weight: 500;
-  color: #767474;
-}
-@media screen and (max-width: 700px) {
-  body > div.wrapper > main section.experience > div h3 span.company {
-    clear: left;
-  }
+  color: #484646;
 }
 body > div.wrapper > main section.experience > div h3 span.company::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 1.5rem;
-  width: 1rem;
-  line-height: 1.5rem;
-  text-align: left;
-  font-size: 1rem;
   color: #767474;
-  font-weight: normal;
+  line-height: 1.5rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  text-align: center;
+  display: block;
+  float: left;
+  font-size: 0.875rem;
+  font-weight: 300;
 }
-body > div.wrapper > main section.experience > div p:first-of-type {
+body > div.wrapper > main section.experience > div p.time {
   margin-bottom: 0.5rem;
+}
+body > div.wrapper > main section.experience > div p.time time,
+body > div.wrapper > main section.experience > div p.time span {
   font-size: 0.75rem;
-  overflow: hidden;
+  font-weight: 400;
 }
-@media screen and (max-width: 400px) {
-  body > div.wrapper > main section.experience > div p:first-of-type {
-    padding-left: 1.25rem;
-  }
+body > div.wrapper > main section.experience > div p.time span::before {
+  content: " // ";
+  letter-spacing: 0.125rem;
+  color: #767474;
 }
-body > div.wrapper > main section.experience > div p:first-of-type time {
-  float: left;
-  display: block;
-  line-height: 1.5rem;
-  height: 1.5rem;
-  margin-right: 0.5rem;
-  font-weight: 500;
+body > div.wrapper > main section.experience > div p.tech-stack {
+  font-size: 0.875rem;
 }
-@media screen and (max-width: 500px) {
-  body > div.wrapper > main section.experience > div p:first-of-type time {
-    margin-right: 0.25rem;
-  }
-}
-body > div.wrapper > main section.experience > div p:first-of-type span {
-  font-weight: 500;
-  display: block;
-  float: left;
-  line-height: 1.5rem;
-  height: 1.5rem;
-  margin-right: 0.5rem;
-}
-@media screen and (max-width: 400px) {
-  body > div.wrapper > main section.experience > div p:first-of-type span {
-    clear: left;
-  }
-}
-body > div.wrapper > main section.experience > div p:first-of-type span::before {
-  content: "//";
-  letter-spacing: 0.25rem;
-  float: left;
-  display: block;
-  margin-right: 0.25rem;
-  font-weight: 500;
-  line-height: 1.6rem;
-  height: 1.5rem;
-  color: #a3a2a2;
-}
-@media screen and (max-width: 500px) {
-  body > div.wrapper > main section.experience > div p:first-of-type span::before {
-    display: none;
-  }
-}
-body > div.wrapper > main section.experience > div p:first-of-type span:last-of-type {
-  margin-right: 0;
+body > div.wrapper > main section.experience > div p.tech-stack::before {
+  content: "Tech Stack: ";
+  font-weight: 600;
 }
 body > div.wrapper > main section.experience > div ul {
-  font-size: 0.875rem;
-  line-height: 1.25em;
-  box-sizing: border-box;
-  padding-left: 1.5rem;
+  margin-bottom: 1rem;
 }
 body > div.wrapper > main section.experience > div ul li {
   display: block;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.8em;
   position: relative;
-  padding-left: 1rem;
-  margin-bottom: 0.5rem;
-  line-height: 1.5em;
+}
+body > div.wrapper > main section.experience > div ul li:last-of-type {
+  margin-bottom: 0;
 }
 body > div.wrapper > main section.experience > div ul li::before {
-  content: "";
-  height: 0.5rem;
-  width: 0.5rem;
+  content: "\e905";
+  font-family: "icomoon";
+  width: 1.5rem;
+  height: 2rem;
+  line-height: 1.7rem;
   position: absolute;
-  top: 0.4rem;
+  font-size: 0.875rem;
+  top: 0;
   left: 0;
-  box-sizing: border-box;
-  background-color: #a6a3d1;
   border-radius: 0.125rem;
 }
 body > div.wrapper > main section.experience > div ul li a {
-  text-decoration: underline;
-  transition: color 0.3s ease-in-out;
-}
-body > div.wrapper > main section.experience > div ul li a:hover {
   color: #4e47a4;
-}
-body > div.wrapper > main section.experience > div ul li strong {
-  font-weight: 600;
-}
-body > div.wrapper > main section.experience > div ul li em {
-  font-weight: 600;
-  font-style: italic;
-}
-body > div.wrapper > aside {
-  position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
-  bottom: 1.5rem;
-  width: calc((100% - 6rem) / 4);
-  box-sizing: border-box;
-}
-@media screen and (max-width: 900px) {
-  body > div.wrapper > aside {
-    position: relative;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-  }
-}
-@media print {
-  body > div.wrapper > aside {
-    position: relative;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-  }
-}
-body > div.wrapper > aside a {
-  text-decoration: underline;
-  transition: color 0.3s ease-in-out;
-}
-body > div.wrapper > aside a:hover {
-  color: #4e47a4;
-}
-body > div.wrapper > aside > img {
-  display: block;
-  margin: 0 0 2rem 0;
-  width: 100%;
-  height: auto;
-  border-radius: 0.5rem;
-}
-@media print {
-  body > div.wrapper > aside > img {
-    display: none;
-  }
-}
-@media screen and (max-width: 900px) {
-  body > div.wrapper > aside > img {
-    display: none;
-  }
-}
-body > div.wrapper > aside ul.skill {
-  overflow: hidden;
-}
-body > div.wrapper > aside ul.skill li {
-  display: block;
-  overflow: hidden;
-  margin-bottom: 0.25rem;
-  position: relative;
-  height: 1.5rem;
-}
-body > div.wrapper > aside ul.skill li:last-of-type {
-  margin-bottom: 0;
-}
-@media screen and (max-width: 900px) {
-  body > div.wrapper > aside ul.skill li {
-    width: calc((100% - 2rem) / 2);
-    float: left;
-    margin-left: 2rem;
-  }
-  body > div.wrapper > aside ul.skill li:nth-of-type(2n + 1) {
-    margin-left: 0;
-    clear: left;
-  }
-}
-@media screen and (max-width: 500px) {
-  body > div.wrapper > aside ul.skill li {
-    width: 100%;
-    float: left;
-    margin-left: 0;
-  }
-  body > div.wrapper > aside ul.skill li:nth-of-type(2n + 1) {
-    margin-left: 0;
-    clear: left;
-  }
-}
-@media print {
-  body > div.wrapper > aside ul.skill li {
-    width: calc((100% - 4rem) / 3);
-    float: left;
-    margin-left: 2rem;
-    margin-bottom: 1rem;
-  }
-  body > div.wrapper > aside ul.skill li:nth-of-type(3n + 1) {
-    margin-left: 0;
-    clear: left;
-  }
-}
-body > div.wrapper > aside ul.skill li span {
-  display: block;
-  float: left;
-  font-size: 0.75rem;
-  height: 1.5rem;
-  line-height: 1.5rem;
-  width: calc((100% - 0.5rem) / 3);
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-body > div.wrapper > aside ul.skill li::before {
-  content: "";
-  width: calc((100% - 0.5rem) / 3 * 2);
-  position: absolute;
-  left: calc((100% - 0.5rem) / 3);
-  margin-left: 0.5rem;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 0.125rem;
-  background-color: #d1d1d1;
-}
-body > div.wrapper > aside ul.skill li::after {
-  content: "";
-  width: calc((100% - 0.5rem) / 3 * 2);
-  position: absolute;
-  left: calc((100% - 0.5rem) / 3);
-  margin-left: 0.5rem;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 0.125rem;
-  background-color: #7a75bb;
-}
-body > div.wrapper > aside ul.skill li[data-score="10"]::after {
-  width: calc((100% - 0.5rem) / 3 * 2 * 0.1);
-}
-body > div.wrapper > aside ul.skill li[data-score="20"]::after {
-  width: calc((100% - 0.5rem) / 3 * 2 * 0.2);
-}
-body > div.wrapper > aside ul.skill li[data-score="30"]::after {
-  width: calc((100% - 0.5rem) / 3 * 2 * 0.3);
-}
-body > div.wrapper > aside ul.skill li[data-score="40"]::after {
-  width: calc((100% - 0.5rem) / 3 * 2 * 0.4);
-}
-body > div.wrapper > aside ul.skill li[data-score="50"]::after {
-  width: calc((100% - 0.5rem) / 3 * 2 * 0.5);
-}
-body > div.wrapper > aside ul.skill li[data-score="60"]::after {
-  width: calc((100% - 0.5rem) / 3 * 2 * 0.6);
-}
-body > div.wrapper > aside ul.skill li[data-score="70"]::after {
-  width: calc((100% - 0.5rem) / 3 * 2 * 0.7);
-}
-body > div.wrapper > aside ul.skill li[data-score="80"]::after {
-  width: calc((100% - 0.5rem) / 3 * 2 * 0.8);
-}
-body > div.wrapper > aside ul.skill li[data-score="90"]::after {
-  width: calc((100% - 0.5rem) / 3 * 2 * 0.9);
-}
-body > div.wrapper > aside ul.skill li[data-score="100"]::after {
-  width: calc((100% - 0.5rem) / 3 * 2);
-}
-body > div.wrapper > aside ul.bullet {
-  overflow: hidden;
-  font-size: 0.75rem;
-}
-body > div.wrapper > aside ul.bullet li {
-  display: block;
-  overflow: hidden;
-  margin-bottom: 0.25rem;
-  position: relative;
-  height: 1.5rem;
-  float: left;
-  width: calc((100% - 1rem) / 2);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  box-sizing: border-box;
-  padding-left: 1rem;
-  position: relative;
-  margin-left: 1rem;
-}
-body > div.wrapper > aside ul.bullet li:nth-of-type(2n + 1) {
-  clear: left;
-  margin-left: 0;
-}
-@media screen and (max-width: 1160px) {
-  body > div.wrapper > aside ul.bullet li {
-    width: 100%;
-    margin-left: 0;
-  }
-}
-@media print {
-  body > div.wrapper > aside ul.bullet li {
-    width: calc((100% - 6rem) / 4);
-    margin-left: 0;
-  }
-  body > div.wrapper > aside ul.bullet li:nth-of-type(2n + 1) {
-    clear: none;
-  }
-}
-body > div.wrapper > aside ul.bullet li::before {
-  content: "";
-  position: absolute;
-  top: 0.625rem;
-  left: 0;
-  width: 0.5rem;
-  height: 0.25rem;
-  border-radius: 50%;
-  background-color: #7a75bb;
-  box-sizing: border-box;
-}
-body > div.wrapper > aside ul.key-value {
-  overflow: hidden;
-  font-size: 0.75rem;
-}
-body > div.wrapper > aside ul.key-value li {
-  margin-bottom: 1rem;
-  overflow: hidden;
-}
-@media print {
-  body > div.wrapper > aside ul.key-value li {
-    width: calc((100% - 4rem) / 3);
-    float: left;
-    margin-left: 2rem;
-    margin-bottom: 1rem;
-  }
-  body > div.wrapper > aside ul.key-value li:nth-of-type(3n+1) {
-    margin-left: 0;
-    clear: left;
-  }
-}
-body > div.wrapper > aside ul.key-value li span.key {
-  display: block;
-  line-height: 1em;
-  float: left;
-  clear: left;
-  margin-right: 0.5rem;
   font-weight: 500;
-  color: #767474;
-}
-body > div.wrapper > aside ul.key-value li span.key::after {
-  content: ": ";
-}
-body > div.wrapper > aside ul.key-value li .value {
-  display: block;
-  line-height: 1em;
-  float: left;
-}
-body > div.wrapper > aside ul.key-value li a.value {
-  text-decoration: underline;
-}
-body > div.wrapper > aside > div {
-  box-sizing: border-box;
-  margin-bottom: 2rem;
-  font-size: 0.875rem;
-}
-body > div.wrapper > aside > div:last-of-type {
-  margin-bottom: 0;
-}
-body > div.wrapper > aside > div h3 {
-  font-style: italic;
-  text-align: right;
-  line-height: 1.25em;
-  vertical-align: top;
-  color: #a3a2a2;
-  padding-bottom: 0.125rem;
-  margin-bottom: 0.75rem;
-  font-size: 0.75rem;
-  position: relative;
-}
-body > div.wrapper > aside > div h3::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 0.0625rem;
-  background: linear-gradient(to left, #a3a2a2, transparent);
-}
-@media screen and (max-width: 900px) {
-  body > div.wrapper > aside > div h3 {
-    font-style: normal;
-    text-align: left;
-    vertical-align: middle;
-    padding-bottom: 0;
-    margin-bottom: 0;
-    color: #333333;
-    font-size: 1.25rem;
-    line-height: 1em;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    padding-bottom: 0;
-    color: #4e47a4;
-  }
-  body > div.wrapper > aside > div h3::after {
-    display: none;
-  }
-}
-@media print {
-  body > div.wrapper > aside > div h3 {
-    font-style: normal;
-    text-align: left;
-    vertical-align: middle;
-    padding-bottom: 0;
-    margin-bottom: 0;
-    color: #333333;
-    font-size: 1.25rem;
-    line-height: 1em;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    padding-bottom: 0;
-    color: #4e47a4;
-  }
-  body > div.wrapper > aside > div h3::after {
-    display: none;
-  }
-}
-body > div.wrapper > aside > div.education > div h4 {
-  font-weight: 700;
-  line-height: 1em;
-  margin-bottom: 0.5rem;
-}
-body > div.wrapper > aside > div.education > div p {
-  color: #767474;
-  overflow: hidden;
-}
-body > div.wrapper > aside > div.education > div p time {
-  line-height: 1em;
-  display: block;
-  float: left;
-  font-size: 0.75rem;
-  font-weight: 500;
-  margin-right: 0.25rem;
-}
-body > div.wrapper > aside > div.education > div p time::after {
-  content: "//";
-  float: right;
-  margin-left: 0.5rem;
-  color: #a3a2a2;
-  letter-spacing: 0.125rem;
-}
-body > div.wrapper > aside > div.education > div p a {
-  display: block;
-  float: left;
-  line-height: 1em;
-  font-size: 0.75rem;
-}
-@media print {
-  body > div.wrapper > aside > div.info {
-    margin-bottom: 1rem;
-  }
 }

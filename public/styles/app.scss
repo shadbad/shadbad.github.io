@@ -8,8 +8,8 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 1.62em;
-  color: $clrText;
-  background-color: $clrGrey400;
+  color: black;
+  background-color: white;
 
   @media print {
     background-color: white;
@@ -49,7 +49,8 @@ body {
   @include scrollbars;
 
   & > div.wrapper {
-    max-width: 75rem;
+    //max-width: 75rem;
+    max-width: 210mm;
     padding: 1.5rem;
     width: 100%;
     margin: auto;
@@ -63,202 +64,108 @@ body {
     }
 
     & > main {
-      width: calc((100% - 6rem) / 4 * 3);
-      float: right;
+      display: block;
 
-      @media screen and (max-width: 900px) {
-        width: 100%;
-        float: none;
-      }
-
-      @media print {
-        width: 100%;
-        float: none;
-        margin-left: 0;
+      h2 {
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.125rem;
+        font-size: 1.25rem;
+        line-height: 1em;
+        margin-bottom: 0.5rem;
       }
 
       section.intro {
-        position: relative;
         overflow: hidden;
         margin-bottom: 2rem;
 
-        @media screen and (max-width: 900px) {
-          margin-bottom: 1.5rem;
+        h1 {
+          margin-bottom: 2rem;
+          padding-left: 9rem;
+          position: relative;
+          min-height: 8rem;
+          padding-top: 1.875rem;
+          box-sizing: border-box;
+          overflow: hidden;
+
+          @media (max-width: 500px) {
+            min-height: 6rem;
+            padding-top: 0;
+            padding-left: 7rem;
+          }
+
           &::before {
             content: "";
-            display: block;
-            width: 10rem;
-            height: 10rem;
-            background-image: url(../images/sina-shadbad.jpg);
-            background-repeat: no-repeat;
-            background-position: center;
+            width: 8rem;
+            height: 8rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: url(/public/images/sina-shadbad.jpg);
             background-size: contain;
-            float: left;
-            margin-right: 1.5rem;
+            background-position: center;
+            background-repeat: no-repeat;
             border-radius: 0.5rem;
+
+            @media (max-width: 500px) {
+              width: 6rem;
+              height: 6rem;
+            }
           }
-        }
-
-        @media screen and (max-width: 680px) {
-          &::before {
-            display: none;
-          }
-        }
-
-        @media screen and (max-width: 500px) {
-          margin-bottom: 1rem;
-        }
-
-        h1 {
-          margin-bottom: 1rem;
 
           span {
             display: block;
             line-height: 1em;
-            color: $clrBlue100;
 
             &:first-of-type {
               font-weight: 700;
-              font-size: 3.5rem;
-              margin-bottom: 0.25rem;
+              font-size: 2.5rem;
+              margin-bottom: 0.5rem;
+              color: $clrBlue100;
+              letter-spacing: 0.0625rem;
 
-              @media screen and (max-width: 470px) {
-                font-size: 2.5rem;
+              @media (max-width: 500px) {
+                font-size: 2rem;
               }
             }
 
             &:last-of-type {
-              font-size: 1.5rem;
               font-weight: 500;
+              font-size: 1.25rem;
+              letter-spacing: 0.125rem;
 
-              @media screen and (max-width: 470px) {
+              @media (max-width: 500px) {
                 font-size: 1rem;
               }
             }
           }
         }
 
-        & > a {
-          display: block;
-          color: $clrBlue100;
-          font-size: 0.875rem;
-          line-height: 1.125em;
-          float: left;
-          clear: left;
-          position: relative;
-
-          @media screen and (max-width: 900px) {
-            float: none;
-            clear: none;
-            display: inline-block;
-          }
-
-          &::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 0.125rem;
-            background-color: $clrBlue300;
-            transform-origin: left;
-            transform: scaleX(0);
-            transition: transform 0.3s ease-in-out;
-          }
-
-          &:hover {
-            &::after {
-              transform: scaleX(1);
-            }
-          }
-        }
-
         ul.contact {
-          overflow: hidden;
-          position: absolute;
-          top: 50%;
-          right: 0;
-          transform: translateY(-50%);
+          float: left;
+          width: calc((100% - 1rem) / 2);
+          font-size: 0.875rem;
 
-          @media screen and(max-width:1080px) {
-            clear: both;
-            padding-top: 1rem;
-            position: relative;
-            top: 0;
-            right: 0;
-            transform: translateY(0);
-          }
-
-          @media screen and (max-width: 900px) {
-            float: none;
-            clear: none;
-            padding-top: 0.5rem;
-          }
-
-          @media screen and (max-width: 500px) {
-            padding-top: 0;
+          @media (max-width: 500px) {
+            width: 100%;
+            margin-bottom: 1rem;
           }
 
           li {
-            width: 100%;
-            margin-bottom: 0.5rem;
-
-            @media screen and (max-width: 1080px) {
-              float: left;
-              width: auto;
-              margin-left: 1rem;
-              margin-bottom: 0;
-
-              &:nth-of-type(3n + 1) {
-                margin-left: 0;
-                clear: left;
-              }
-            }
-
-            @media screen and (max-width: 500px) {
-              clear: left;
-              width: 100%;
-              margin-left: 0;
-              margin-top: 1rem;
-            }
+            display: block;
+            overflow: hidden;
 
             &:last-of-type {
               margin-bottom: 0;
             }
 
             a {
-              letter-spacing: 0.125rem;
               display: block;
-              height: 2rem;
-              line-height: 2rem;
-              font-weight: 500;
-              position: relative;
-              padding-left: 2rem;
-              box-sizing: border-box;
+              float: left;
+              height: 1.75rem;
+              line-height: 1.75rem;
               transition: color 0.3s ease-in-out;
-
-              @media screen and(max-width:1080px) {
-                letter-spacing: normal;
-                padding-left: 0;
-              }
-
-              &::before {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 1rem;
-                height: 2rem;
-                line-height: 1.9rem;
-                text-align: center;
-                font-size: 1.125rem;
-                color: $clrGrey200;
-                transition: color 0.3s ease-in-out 0.2s;
-
-                @media screen and(max-width:1080px) {
-                  display: none;
-                  font-size: 1rem;
-                }
-              }
+              color: black;
 
               &:hover {
                 color: $clrBlue100;
@@ -267,590 +174,194 @@ body {
                   color: $clrBlue200;
                 }
               }
+
+              &::before {
+                display: block;
+                float: left;
+                height: 1.75rem;
+                width: 1.5rem;
+                line-height: 1.75rem;
+                text-align: left;
+                color: $clrGrey100;
+                transition: color 0.3s ease-in-out;
+              }
+
+              &.icon-skype {
+                &::before {
+                  font-size: 1.125rem;
+                  position: relative;
+                  left: -0.125rem;
+                  line-height: 1.8rem;
+                }
+              }
+
+              &.icon-linkedin {
+                &::before {
+                  line-height: 1.7rem;
+                }
+              }
+            }
+          }
+        }
+
+        ul.skills-education {
+          width: calc((100% - 1rem) / 2);
+          float: left;
+          margin-left: 1rem;
+          font-size: 0.875rem;
+
+          @media (max-width: 500px) {
+            width: 100%;
+            margin-left: 0;
+          }
+
+          & > li {
+            display: block;
+
+            &:first-of-type {
+              margin-bottom: 0.125rem;
+
+              &::before {
+                content: "Education: ";
+                font-weight: 500;
+                display: inline-block;
+                margin-right: 0.25rem;
+              }
+            }
+
+            &:last-of-type {
+              ul {
+                display: inline-block;
+
+                &::before {
+                  content: "Top Skills: ";
+                  font-weight: 500;
+                  display: inline-block;
+                  margin-right: 0.25rem;
+                }
+
+                li {
+                  display: inline-block;
+                  &::after {
+                    content: ", ";
+                  }
+
+                  &:last-of-type {
+                    &::after {
+                      display: none;
+                    }
+                  }
+                }
+              }
             }
           }
         }
       }
 
       section.summary {
-        position: relative;
-        // padding-bottom: 1rem;
         margin-bottom: 2rem;
-
-        p {
-          font-size: 0.875rem;
-
-          strong {
-            font-weight: 600;
-          }
-
-          em {
-            font-weight: 600;
-            font-style: italic;
-          }
-        }
       }
 
       section.experience {
         & > h2 {
-          @include headings;
-          display: none;
-
-          @media screen and (max-width: 900px) {
-            display: block;
-          }
-
-          @media print {
-            display: block;
-          }
+          margin-bottom: 1rem;
         }
-
         & > div {
-          margin-bottom: 2rem;
+          margin-bottom: 3rem;
 
           h3 {
             overflow: hidden;
-            margin-bottom: 0.125rem;
             span {
               display: block;
               float: left;
-              height: 1.5rem;
-              line-height: 1.5rem;
 
               &.title {
+                font-weight: 600;
+                line-height: 1.5rem;
                 font-size: 1rem;
-                font-weight: 700;
-                margin-right: 0.25rem;
+                height: 1.5rem;
               }
 
               &.company {
-                position: relative;
-                padding-left: 1.25rem;
-                line-height: 1.6rem;
+                overflow: hidden;
                 font-weight: 500;
-                color: $clrGrey100;
-
-                @media screen and (max-width: 700px) {
-                  clear: left;
-                }
+                color: $clrBlack;
 
                 &::before {
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  height: 1.5rem;
-                  width: 1rem;
-                  line-height: 1.5rem;
-                  text-align: left;
-                  font-size: 1rem;
                   color: $clrGrey100;
-                  font-weight: normal;
+                  line-height: 1.5rem;
+                  height: 1.5rem;
+                  width: 1.5rem;
+                  text-align: center;
+                  display: block;
+                  float: left;
+                  font-size: 0.875rem;
+                  font-weight: 300;
                 }
               }
             }
           }
 
           p {
-            &:first-of-type {
+            &.time {
               margin-bottom: 0.5rem;
-              font-size: 0.75rem;
-              overflow: hidden;
 
-              @media screen and (max-width: 400px) {
-                padding-left: 1.25rem;
-              }
-
-              time {
-                float: left;
-                display: block;
-                line-height: 1.5rem;
-                height: 1.5rem;
-                margin-right: 0.5rem;
-                font-weight: 500;
-
-                @media screen and (max-width: 500px) {
-                  margin-right: 0.25rem;
-                }
+              time,
+              span {
+                font-size: 0.75rem;
+                font-weight: 400;
               }
 
               span {
-                font-weight: 500;
-                display: block;
-                float: left;
-                line-height: 1.5rem;
-                height: 1.5rem;
-                margin-right: 0.5rem;
-
-                @media screen and (max-width: 400px) {
-                  clear: left;
-                }
-
                 &::before {
-                  content: "//";
-                  letter-spacing: 0.25rem;
-                  float: left;
-                  display: block;
-                  margin-right: 0.25rem;
-                  font-weight: 500;
-                  line-height: 1.6rem;
-                  height: 1.5rem;
-                  color: $clrGrey200;
-
-                  @media screen and (max-width: 500px) {
-                    display: none;
-                  }
+                  content: " // ";
+                  letter-spacing: 0.125rem;
+                  color: $clrGrey100;
                 }
+              }
+            }
 
-                &:last-of-type {
-                  margin-right: 0;
-                }
+            &.tech-stack {
+              font-size: 0.875rem;
+
+              &::before {
+                content: "Tech Stack: ";
+                font-weight: 600;
               }
             }
           }
 
           ul {
-            font-size: 0.875rem;
-            line-height: 1.25em;
-            box-sizing: border-box;
-            padding-left: 1.5rem;
+            margin-bottom: 1rem;
             li {
               display: block;
+              padding-left: 1.5rem;
+              margin-bottom: 1rem;
+              line-height: 1.8em;
               position: relative;
-              padding-left: 1rem;
-              margin-bottom: 0.5rem;
-              line-height: 1.5em;
+
+              &:last-of-type {
+                margin-bottom: 0;
+              }
 
               &::before {
-                content: "";
-                height: 0.5rem;
-                width: 0.5rem;
+                content: "\e905";
+                font-family: "icomoon";
+                width: 1.5rem;
+                height: 2rem;
+                line-height: 1.7rem;
                 position: absolute;
-                top: 0.4rem;
+                font-size: 0.875rem;
+                top: 0;
                 left: 0;
-                box-sizing: border-box;
-                background-color: $clrBlue300;
                 border-radius: 0.125rem;
               }
 
               a {
-                text-decoration: underline;
-
-                transition: color 0.3s ease-in-out;
-
-                &:hover {
-                  color: $clrBlue100;
-                }
-              }
-
-              strong {
-                font-weight: 600;
-              }
-
-              em {
-                font-weight: 600;
-                font-style: italic;
-              }
-            }
-          }
-        }
-      }
-    }
-
-    & > aside {
-      position: absolute;
-      top: 1.5rem;
-      left: 1.5rem;
-      bottom: 1.5rem;
-      width: calc((100% - 6rem) / 4);
-      box-sizing: border-box;
-
-      @media screen and (max-width: 900px) {
-        position: relative;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-      }
-
-      @media print {
-        position: relative;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-      }
-
-      a {
-        text-decoration: underline;
-        transition: color 0.3s ease-in-out;
-
-        &:hover {
-          color: $clrBlue100;
-        }
-      }
-
-      & > img {
-        display: block;
-        margin: 0 0 2rem 0;
-        width: 100%;
-        height: auto;
-        border-radius: 0.5rem;
-
-        @media print {
-          display: none;
-        }
-
-        @media screen and (max-width: 900px) {
-          display: none;
-        }
-      }
-
-      ul.skill {
-        overflow: hidden;
-        li {
-          display: block;
-          overflow: hidden;
-          margin-bottom: 0.25rem;
-          position: relative;
-          height: 1.5rem;
-
-          &:last-of-type {
-            margin-bottom: 0;
-          }
-
-          @media screen and (max-width: 900px) {
-            width: calc((100% - 2rem) / 2);
-            float: left;
-            margin-left: 2rem;
-
-            &:nth-of-type(2n + 1) {
-              margin-left: 0;
-              clear: left;
-            }
-          }
-
-          @media screen and (max-width: 500px) {
-            width: 100%;
-            float: left;
-            margin-left: 0;
-
-            &:nth-of-type(2n + 1) {
-              margin-left: 0;
-              clear: left;
-            }
-          }
-
-          @media print {
-            width: calc((100% - 4rem) / 3);
-            float: left;
-            margin-left: 2rem;
-            margin-bottom: 1rem;
-
-            &:nth-of-type(3n + 1) {
-              margin-left: 0;
-              clear: left;
-            }
-          }
-
-          span {
-            display: block;
-            float: left;
-            font-size: 0.75rem;
-            height: 1.5rem;
-            line-height: 1.5rem;
-            width: calc((100% - 0.5rem) / 3);
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-          }
-
-          &::before {
-            content: "";
-            width: calc((100% - 0.5rem) / 3 * 2);
-            position: absolute;
-            left: calc((100% - 0.5rem) / 3);
-            margin-left: 0.5rem;
-            top: 50%;
-            transform: translateY(-50%);
-            height: 0.125rem;
-            background-color: $clrGrey300;
-          }
-
-          &::after {
-            content: "";
-            width: calc((100% - 0.5rem) / 3 * 2);
-            position: absolute;
-            left: calc((100% - 0.5rem) / 3);
-            margin-left: 0.5rem;
-            top: 50%;
-            transform: translateY(-50%);
-            height: 0.125rem;
-            background-color: $clrBlue200;
-          }
-
-          &[data-score="10"] {
-            &::after {
-              width: calc((100% - 0.5rem) / 3 * 2 * 0.1);
-            }
-          }
-
-          &[data-score="20"] {
-            &::after {
-              width: calc((100% - 0.5rem) / 3 * 2 * 0.2);
-            }
-          }
-
-          &[data-score="30"] {
-            &::after {
-              width: calc((100% - 0.5rem) / 3 * 2 * 0.3);
-            }
-          }
-
-          &[data-score="40"] {
-            &::after {
-              width: calc((100% - 0.5rem) / 3 * 2 * 0.4);
-            }
-          }
-
-          &[data-score="50"] {
-            &::after {
-              width: calc((100% - 0.5rem) / 3 * 2 * 0.5);
-            }
-          }
-
-          &[data-score="60"] {
-            &::after {
-              width: calc((100% - 0.5rem) / 3 * 2 * 0.6);
-            }
-          }
-
-          &[data-score="70"] {
-            &::after {
-              width: calc((100% - 0.5rem) / 3 * 2 * 0.7);
-            }
-          }
-
-          &[data-score="80"] {
-            &::after {
-              width: calc((100% - 0.5rem) / 3 * 2 * 0.8);
-            }
-          }
-
-          &[data-score="90"] {
-            &::after {
-              width: calc((100% - 0.5rem) / 3 * 2 * 0.9);
-            }
-          }
-
-          &[data-score="100"] {
-            &::after {
-              width: calc((100% - 0.5rem) / 3 * 2);
-            }
-          }
-        }
-      }
-
-      ul.bullet {
-        overflow: hidden;
-        font-size: 0.75rem;
-
-        li {
-          display: block;
-          overflow: hidden;
-          margin-bottom: 0.25rem;
-          position: relative;
-          height: 1.5rem;
-          float: left;
-          width: calc((100% - 1rem) / 2);
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          box-sizing: border-box;
-          padding-left: 1rem;
-          position: relative;
-          margin-left: 1rem;
-
-          &:nth-of-type(2n + 1) {
-            clear: left;
-            margin-left: 0;
-          }
-
-          @media screen and (max-width: 1160px) {
-            width: 100%;
-            margin-left: 0;
-          }
-
-          @media print {
-            width: calc((100% - 6rem) / 4);
-            margin-left: 0;
-
-            &:nth-of-type(2n + 1) {
-              clear: none;
-            }
-          }
-
-          &::before {
-            content: "";
-            position: absolute;
-            top: 0.625rem;
-            left: 0;
-            width: 0.5rem;
-            height: 0.25rem;
-            border-radius: 50%;
-            background-color: $clrBlue200;
-            box-sizing: border-box;
-          }
-        }
-      }
-
-      ul.key-value {
-        overflow: hidden;
-        font-size: 0.75rem;
-
-        li {
-          margin-bottom: 1rem;
-          overflow: hidden;
-
-          @media print{
-            width: calc((100% - 4rem)/3);
-            float: left;
-            margin-left: 2rem;
-            margin-bottom: 1rem;
-
-            &:nth-of-type(3n+1){
-              margin-left: 0;
-              clear: left;
-            }
-          }
-
-          span.key {
-            display: block;
-            line-height: 1em;
-            float: left;
-            clear: left;
-            
-            margin-right: 0.5rem;
-            font-weight: 500;
-            color: $clrGrey100;
-
-            &::after {
-              content: ": ";
-            }
-          }
-
-          .value {
-            display: block;
-            line-height: 1em;
-            float: left;
-            
-          }
-
-          a.value {
-            text-decoration: underline;
-          }
-        }
-      }
-
-      & > div {
-        box-sizing: border-box;
-        margin-bottom: 2rem;
-        font-size: 0.875rem;
-
-        &:last-of-type {
-          margin-bottom: 0;
-        }
-
-        h3 {
-          font-style: italic;
-          text-align: right;
-          line-height: 1.25em;
-          vertical-align: top;
-          color: $clrGrey200;
-          padding-bottom: 0.125rem;
-          margin-bottom: 0.75rem;
-          font-size: 0.75rem;
-          position: relative;
-
-          &::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 0.0625rem;
-            background: linear-gradient(to left, $clrGrey200, transparent);
-          }
-
-          @media screen and (max-width: 900px) {
-            font-style: normal;
-            text-align: left;
-            vertical-align: middle;
-            padding-bottom: 0;
-            margin-bottom: 0;
-            color: $clrText;
-            @include headings;
-
-            &::after {
-              display: none;
-            }
-          }
-
-          @media print {
-            font-style: normal;
-            text-align: left;
-            vertical-align: middle;
-            padding-bottom: 0;
-            margin-bottom: 0;
-            color: $clrText;
-            @include headings;
-
-            &::after {
-              display: none;
-            }
-          }
-        }
-
-        &.education {
-          & > div {
-            h4 {
-              font-weight: 700;
-              line-height: 1em;
-              margin-bottom: 0.5rem;
-            }
-
-            p {
-              color: $clrGrey100;
-              overflow: hidden;
-              time {
-                line-height: 1em;
-                display: block;
-                float: left;
-                font-size: 0.75rem;
+                color: $clrBlue100;
                 font-weight: 500;
-                margin-right: 0.25rem;
-
-                &::after {
-                  content: "//";
-                  float: right;
-                  margin-left: 0.5rem;
-                  color: $clrGrey200;
-                  letter-spacing: 0.125rem;
-                }
-              }
-
-              a {
-                display: block;
-                float: left;
-                line-height: 1em;
-                font-size: 0.75rem;
               }
             }
-          }
-        }
-
-        &.info{
-          @media print{
-            margin-bottom: 1rem;
           }
         }
       }

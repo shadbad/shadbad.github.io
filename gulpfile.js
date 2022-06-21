@@ -18,36 +18,36 @@ const browserSync = bs.create();
 // #region BrowserSync
 
 function browsersyncServe(callback) {
-  browserSync.init({
-    server: { baseDir: "./" },
-    cookies: { stripDomain: false },
-    port: 3000,
-  });
-  callback();
+    browserSync.init({
+        server: { baseDir: "./" },
+        cookies: { stripDomain: false },
+        port: 3000,
+    });
+    callback();
 }
 
 function browsersyncReload(callback) {
-  browserSync.reload();
-  callback();
+    browserSync.reload();
+    callback();
 }
 
 // #endregion
 
 // #region image optimization
 
-function imgCleanup(){
+function imgCleanup() {
     return gulp
         .src("public/images/{!(_src), /**/}")
         .pipe(clean());
 }
 
-function imgSvgWebpCopy(){
+function imgSvgWebpCopy() {
     return gulp
         .src('public/images/_src/**/*.+(svg|webp)')
         .pipe(gulp.dest('public/images/'));
 }
 
-function imgOptimization(){
+function imgOptimization() {
     return gulp
         .src('public/images/_src/**/*.+(png|jpg|gif)')
         .pipe(imagemin())
@@ -59,16 +59,16 @@ function imgOptimization(){
 // #region Development
 
 function _devBuildStyles() {
-  return gulp
-    .src("public/styles/**/[!_]*.scss")
-    .pipe(plumber())
-    .pipe(sass({ outputStyle: "expanded" }).on("error", sass.logError))
-    .pipe(gulp.dest((file) => file.base));
+    return gulp
+        .src("public/styles/**/[!_]*.scss")
+        .pipe(plumber())
+        .pipe(sass({ outputStyle: "expanded" }).on("error", sass.logError))
+        .pipe(gulp.dest((file) => file.base));
 }
 
 function _devWatchTask() {
-  gulp.watch("**/*.html", browsersyncReload);
-  gulp.watch(["public/styles/**/*.scss"], gulp.series(_devBuildStyles, browsersyncReload));
+    gulp.watch("**/*.html", browsersyncReload);
+    gulp.watch(["public/styles/**/*.scss"], gulp.series(_devBuildStyles, browsersyncReload));
 }
 
 // #endregion
@@ -76,27 +76,27 @@ function _devWatchTask() {
 // #region Publish
 
 function publishStyles() {
-  return gulp
-    .src("public/styles/app.scss")
-    .pipe(plumber())
-    .pipe(sass({ outputStyle: "expanded" }).on("error", sass.logError))
-    .pipe(prefix())
-    .pipe(gulp.dest("public/styles/"))
-    .pipe(cssmin())
-    .pipe(rename({ suffix: ".min" }))
-    .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest("public/styles/"));
+    return gulp
+        .src("public/styles/app.scss")
+        .pipe(plumber())
+        .pipe(sass({ outputStyle: "expanded" }).on("error", sass.logError))
+        .pipe(prefix())
+        .pipe(gulp.dest("public/styles/"))
+        .pipe(cssmin())
+        .pipe(rename({ suffix: ".min" }))
+        .pipe(sourcemaps.write("."))
+        .pipe(gulp.dest("public/styles/"));
 }
 
 function publishScripts() {
-  const scripts = ["public/scripts/app.js"];
+    const scripts = ["public/scripts/app.js"];
 
-  return gulp
-    .src(scripts)
-    .pipe(plumber())
-    .pipe(concat("app.min.js"))
-    .pipe(terser())
-    .pipe(gulp.dest("public/scripts/"));
+    return gulp
+        .src(scripts)
+        .pipe(plumber())
+        .pipe(concat("app.min.js"))
+        .pipe(terser())
+        .pipe(gulp.dest("public/scripts/"));
 }
 
 // #endregion
