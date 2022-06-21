@@ -621,14 +621,19 @@ body > div.wrapper > main section.intro ul.skills-education {
 body > div.wrapper > main section.intro ul.skills-education > li {
   display: block;
 }
+body > div.wrapper > main section.intro ul.skills-education > li::before {
+  font-weight: 500;
+  display: inline-block;
+  margin-right: 0.25rem;
+}
 body > div.wrapper > main section.intro ul.skills-education > li:first-of-type {
   margin-bottom: 0.125rem;
 }
 body > div.wrapper > main section.intro ul.skills-education > li:first-of-type::before {
   content: "Education: ";
-  font-weight: 500;
-  display: inline-block;
-  margin-right: 0.25rem;
+}
+body > div.wrapper > main section.intro ul.skills-education > li:nth-of-type(3n + 2)::before {
+  content: "Languages: ";
 }
 body > div.wrapper > main section.intro ul.skills-education > li:last-of-type ul {
   display: inline-block;
