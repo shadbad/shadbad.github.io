@@ -1,1 +1,0 @@
-# shadbad.github.io
