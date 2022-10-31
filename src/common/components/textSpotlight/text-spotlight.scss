@@ -1,0 +1,27 @@
+.text-spotlight {
+    display: inline-block;
+    position: relative;
+    font-size: 2rem;
+    line-height: 1em;
+    position: relative;
+
+    &::before {
+        content: attr(data-before);
+        font-size: inherit;
+        line-height: inherit;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        letter-spacing: -0.02em;
+        font-weight: 600;
+        position: absolute;
+        clip-path: inset(0 100% 0 0);
+        transition: clip-path 0.3s ease-in-out;
+    }
+
+    &:hover {
+        &::before {
+            clip-path: inset(0 0 0 0);
+        }
+    }
+}
