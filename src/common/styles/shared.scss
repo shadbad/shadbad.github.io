@@ -1,4 +1,4 @@
-@use '/src/assets/styles/colors.scss';
+@use '/src/common/styles/colors.scss';
 .wrapper {
     max-width: 75rem;
     width: 100%;
@@ -21,7 +21,7 @@
     }
 
     &::-webkit-scrollbar-thumb {
-        background-color: rgba(colors.$charcoal300, 0.25);
+        background-color: rgba(colors.$charcoal100, 0.5);
         border-radius: 0.25rem;
     }
 }
