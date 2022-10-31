@@ -4,7 +4,10 @@
 @import '/src/common/styles/partials/fontPopins';
 
 :root {
-    font: 400 16px/1.62em 'Poppins';
+    font-family: 'Poppins', 'Segoe UI', Verdana, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5em;
     background-color: colors.$charcoal100;
     color: colors.$charcoal700;
     -webkit-touch-callout: none;
@@ -13,7 +16,6 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    min-height: 200vh;
     @extend .scrollbar;
 }
 
