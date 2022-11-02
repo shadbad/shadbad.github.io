@@ -59,7 +59,7 @@ const Icon = React.memo(
             return data.find((i) => i.name === icon);
         }
 
-        function IconComponent({ name, className }: propTypes) {
+        function IconComponent({ name, className = '' }: propTypes) {
             const iconData = findIcon(name);
 
             return (
@@ -76,10 +76,6 @@ const Icon = React.memo(
                 </svg>
             );
         }
-
-        IconComponent.defaultProps = {
-            className: ''
-        };
 
         return IconComponent;
     })()
